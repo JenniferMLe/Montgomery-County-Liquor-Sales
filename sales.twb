@@ -41,11 +41,11 @@
       <connection class='federated'>
         <named-connections>
           <named-connection caption='warehouse_and_retail_sales' name='textscan.05gdfb61d65rqd0zqi0of18jq3nm'>
-            <connection class='textscan' directory='/Users/jenniferle/Downloads/Github/Warehouse' filename='Warehouse_and_Retail_Sales.csv' password='' server='' />
+            <connection class='textscan' directory='/Users/jenniferle/Downloads/Github/Warehouse' filename='Warehouse_and_Retail_Sales2.csv' password='' server='' />
           </named-connection>
         </named-connections>
         <relation type='collection'>
-          <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Warehouse_and_Retail_Sales.csv' table='[Warehouse_and_Retail_Sales#csv]' type='table'>
+          <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Warehouse_and_Retail_Sales2.csv' table='[Warehouse_and_Retail_Sales2#csv]' type='table'>
             <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
               <column datatype='integer' name='YEAR' ordinal='0' />
               <column datatype='integer' name='MONTH' ordinal='1' />
@@ -75,7 +75,7 @@
           <metadata-record class='capability'>
             <remote-name />
             <remote-type>0</remote-type>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -108,31 +108,31 @@
             <remote-name>YEAR</remote-name>
             <remote-type>20</remote-type>
             <local-name>[YEAR]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>YEAR</remote-alias>
             <ordinal>0</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>MONTH</remote-name>
             <remote-type>20</remote-type>
             <local-name>[MONTH]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>MONTH</remote-alias>
             <ordinal>1</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>SUPPLIER</remote-name>
             <remote-type>129</remote-type>
             <local-name>[SUPPLIER]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>SUPPLIER</remote-alias>
             <ordinal>2</ordinal>
             <local-type>string</local-type>
@@ -141,25 +141,25 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>ITEM CODE</remote-name>
             <remote-type>20</remote-type>
             <local-name>[ITEM CODE]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>ITEM CODE</remote-alias>
             <ordinal>3</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>ITEM TYPE</remote-name>
             <remote-type>129</remote-type>
             <local-name>[ITEM TYPE]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>ITEM TYPE</remote-alias>
             <ordinal>4</ordinal>
             <local-type>string</local-type>
@@ -168,13 +168,13 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>ITEM DESCRIPTION</remote-name>
             <remote-type>129</remote-type>
             <local-name>[ITEM DESCRIPTION]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>ITEM DESCRIPTION</remote-alias>
             <ordinal>5</ordinal>
             <local-type>string</local-type>
@@ -183,43 +183,43 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>RETAIL SALES</remote-name>
             <remote-type>5</remote-type>
             <local-name>[RETAIL SALES]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>RETAIL SALES</remote-alias>
             <ordinal>6</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>RETAIL TRANSFERS</remote-name>
             <remote-type>5</remote-type>
             <local-name>[RETAIL TRANSFERS]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>RETAIL TRANSFERS</remote-alias>
             <ordinal>7</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>WAREHOUSE SALES</remote-name>
             <remote-type>5</remote-type>
             <local-name>[WAREHOUSE SALES]</local-name>
-            <parent-name>[Warehouse_and_Retail_Sales.csv]</parent-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
             <remote-alias>WAREHOUSE SALES</remote-alias>
             <ordinal>8</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Code</remote-name>
@@ -231,7 +231,7 @@
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Category</remote-name>
@@ -246,7 +246,7 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Description</remote-name>
@@ -261,7 +261,7 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Size</remote-name>
@@ -276,7 +276,7 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Total Inventory</remote-name>
@@ -288,7 +288,7 @@
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Price</remote-name>
@@ -300,7 +300,7 @@
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Sale Price</remote-name>
@@ -316,7 +316,7 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Sale End Date</remote-name>
@@ -332,7 +332,7 @@
             <width>1073741823</width>
             <contains-null>true</contains-null>
             <collation flag='0' name='LEN_RUS' />
-            <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
           </metadata-record>
         </metadata-records>
       </connection>
@@ -352,6 +352,7 @@
       <column caption='Items Count' datatype='integer' name='[Calculation_3313171636045213697]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='COUNTD([ITEM CODE])' />
       </column>
+      <column caption='Category1' datatype='string' name='[Category]' role='dimension' type='nominal' />
       <column datatype='integer' name='[Code]' role='dimension' type='ordinal' />
       <column caption='Item Code' datatype='integer' name='[ITEM CODE]' role='dimension' type='ordinal' />
       <column caption='Item Description' datatype='string' name='[ITEM DESCRIPTION]' role='dimension' type='nominal' />
@@ -362,8 +363,8 @@
       <column caption='Supplier' datatype='string' name='[SUPPLIER]' role='dimension' type='nominal' />
       <column caption='Warehouse Sales' datatype='real' name='[WAREHOUSE SALES]' role='measure' type='quantitative' />
       <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
-      <column caption='Inventory_and_Sale_Items_20250317.csv' datatype='table' name='[__tableau_internal_object_id__].[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]' role='measure' type='quantitative' />
-      <column caption='Warehouse_and_Retail_Sales.csv' datatype='table' name='[__tableau_internal_object_id__].[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]' role='measure' type='quantitative' />
+      <column caption='Inventory_and_Sale_Items_20250317.csv' datatype='table' name='[__tableau_internal_object_id__].[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]' role='measure' type='quantitative' />
+      <column caption='Warehouse_and_Retail_Sales2.csv' datatype='table' name='[__tableau_internal_object_id__].[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]' role='measure' type='quantitative' />
       <column-instance column='[ITEM TYPE]' derivation='None' name='[none:ITEM TYPE:nk]' pivot='key' type='nominal' />
       <group caption='Action (Item Type,Supplier)' hidden='true' name='[Action (Item Type,Supplier)]' name-style='unqualified' user:auto-column='sheet_link'>
         <groupfilter function='crossjoin'>
@@ -372,146 +373,146 @@
         </groupfilter>
       </group>
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/md/x0jg8pwj2r112lsfdc9_340c0000gs/T/tableau-temp/#TableauTemp_0lziv0c1w77g1n1b7rplv0doj6xd.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/18/2025 04:17:18 AM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/md/x0jg8pwj2r112lsfdc9_340c0000gs/T/tableau-temp/#TableauTemp_0tmd1ws0snno7s12fm2i71q05pz6.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/18/2025 11:06:27 PM' username='tableau_internal_user'>
           <relation type='collection'>
-            <relation name='Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165' table='[Extract].[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]' type='table' />
-            <relation name='Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4' table='[Extract].[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]' type='table' />
+            <relation name='Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166' table='[Extract].[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]' type='table' />
+            <relation name='Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C' table='[Extract].[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]' type='table' />
           </relation>
           <metadata-records>
             <metadata-record class='column'>
               <remote-name>YEAR</remote-name>
               <remote-type>20</remote-type>
               <local-name>[YEAR]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>YEAR</remote-alias>
               <ordinal>0</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>MONTH</remote-name>
               <remote-type>20</remote-type>
               <local-name>[MONTH]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>MONTH</remote-alias>
               <ordinal>1</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
               <approx-count>12</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>SUPPLIER</remote-name>
               <remote-type>129</remote-type>
               <local-name>[SUPPLIER]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>SUPPLIER</remote-alias>
               <ordinal>2</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>895</approx-count>
+              <approx-count>852</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>ITEM CODE</remote-name>
               <remote-type>20</remote-type>
               <local-name>[ITEM CODE]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>ITEM CODE</remote-alias>
               <ordinal>3</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>integer</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>82326</approx-count>
+              <approx-count>70313</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>ITEM TYPE</remote-name>
               <remote-type>129</remote-type>
               <local-name>[ITEM TYPE]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>ITEM TYPE</remote-alias>
               <ordinal>4</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>7</approx-count>
+              <approx-count>12</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>ITEM DESCRIPTION</remote-name>
               <remote-type>129</remote-type>
               <local-name>[ITEM DESCRIPTION]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>ITEM DESCRIPTION</remote-alias>
               <ordinal>5</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>string</local-type>
               <aggregation>Count</aggregation>
-              <approx-count>85914</approx-count>
+              <approx-count>73918</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>RETAIL SALES</remote-name>
               <remote-type>5</remote-type>
               <local-name>[RETAIL SALES]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>RETAIL SALES</remote-alias>
               <ordinal>6</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>9147</approx-count>
+              <approx-count>9088</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>RETAIL TRANSFERS</remote-name>
               <remote-type>5</remote-type>
               <local-name>[RETAIL TRANSFERS]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>RETAIL TRANSFERS</remote-alias>
               <ordinal>7</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>1235</approx-count>
+              <approx-count>783</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>WAREHOUSE SALES</remote-name>
               <remote-type>5</remote-type>
               <local-name>[WAREHOUSE SALES]</local-name>
-              <parent-name>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</parent-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
               <remote-alias>WAREHOUSE SALES</remote-alias>
               <ordinal>8</ordinal>
-              <family>Warehouse_and_Retail_Sales.csv</family>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
               <local-type>real</local-type>
               <aggregation>Sum</aggregation>
-              <approx-count>1588</approx-count>
+              <approx-count>1125</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]</object-id>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Code</remote-name>
               <remote-type>20</remote-type>
               <local-name>[Code]</local-name>
-              <parent-name>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</parent-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
               <remote-alias>Code</remote-alias>
               <ordinal>9</ordinal>
               <family>Inventory_and_Sale_Items_20250317.csv</family>
@@ -519,13 +520,13 @@
               <aggregation>Sum</aggregation>
               <approx-count>6515</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Category</remote-name>
               <remote-type>129</remote-type>
               <local-name>[Category]</local-name>
-              <parent-name>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</parent-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
               <remote-alias>Category</remote-alias>
               <ordinal>10</ordinal>
               <family>Inventory_and_Sale_Items_20250317.csv</family>
@@ -534,13 +535,13 @@
               <approx-count>105</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Description</remote-name>
               <remote-type>129</remote-type>
               <local-name>[Description]</local-name>
-              <parent-name>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</parent-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
               <remote-alias>Description</remote-alias>
               <ordinal>11</ordinal>
               <family>Inventory_and_Sale_Items_20250317.csv</family>
@@ -549,13 +550,13 @@
               <approx-count>6515</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Size</remote-name>
               <remote-type>129</remote-type>
               <local-name>[Size]</local-name>
-              <parent-name>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</parent-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
               <remote-alias>Size</remote-alias>
               <ordinal>12</ordinal>
               <family>Inventory_and_Sale_Items_20250317.csv</family>
@@ -564,13 +565,13 @@
               <approx-count>39</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Total Inventory</remote-name>
               <remote-type>20</remote-type>
               <local-name>[Total Inventory]</local-name>
-              <parent-name>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</parent-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
               <remote-alias>Total Inventory</remote-alias>
               <ordinal>13</ordinal>
               <family>Inventory_and_Sale_Items_20250317.csv</family>
@@ -578,13 +579,13 @@
               <aggregation>Sum</aggregation>
               <approx-count>375</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Price</remote-name>
               <remote-type>5</remote-type>
               <local-name>[Price]</local-name>
-              <parent-name>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</parent-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
               <remote-alias>Price</remote-alias>
               <ordinal>14</ordinal>
               <family>Inventory_and_Sale_Items_20250317.csv</family>
@@ -592,13 +593,13 @@
               <aggregation>Sum</aggregation>
               <approx-count>286</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Sale Price</remote-name>
               <remote-type>129</remote-type>
               <local-name>[Sale Price]</local-name>
-              <parent-name>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</parent-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
               <remote-alias>Sale Price</remote-alias>
               <ordinal>15</ordinal>
               <family>Inventory_and_Sale_Items_20250317.csv</family>
@@ -607,13 +608,13 @@
               <approx-count>78</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Sale End Date</remote-name>
               <remote-type>129</remote-type>
               <local-name>[Sale End Date]</local-name>
-              <parent-name>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</parent-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
               <remote-alias>Sale End Date</remote-alias>
               <ordinal>16</ordinal>
               <family>Inventory_and_Sale_Items_20250317.csv</family>
@@ -622,7 +623,7 @@
               <approx-count>2</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]</object-id>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -632,28 +633,22 @@
         <style-rule element='mark'>
           <encoding attr='color' field='[none:ITEM TYPE:nk]' palette='blue_10_0' type='palette'>
             <map to='#2a5783'>
-              <bucket>&quot;WINE&quot;</bucket>
+              <bucket>&quot;Wine&quot;</bucket>
             </map>
             <map to='#42709e'>
-              <bucket>&quot;NON-ALCOHOL&quot;</bucket>
+              <bucket>&quot;Non-Alcohol&quot;</bucket>
             </map>
             <map to='#598ab6'>
-              <bucket>&quot;LIQUOR&quot;</bucket>
+              <bucket>&quot;Liquor&quot;</bucket>
             </map>
             <map to='#75a6cc'>
-              <bucket>&quot;KEGS&quot;</bucket>
+              <bucket>&quot;Kegs&quot;</bucket>
             </map>
             <map to='#94c2e1'>
-              <bucket>&quot;DUNNAGE&quot;</bucket>
-            </map>
-            <map to='#b9ca5d'>
-              <bucket>&quot;STR_SUPPLIES&quot;</bucket>
+              <bucket>&quot;Dunnage&quot;</bucket>
             </map>
             <map to='#b9ddf1'>
-              <bucket>&quot;BEER&quot;</bucket>
-            </map>
-            <map to='#edc948'>
-              <bucket>&quot;REF&quot;</bucket>
+              <bucket>&quot;Beer&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -668,7 +663,7 @@
       </datasource-dependencies>
       <object-graph>
         <objects>
-          <object caption='Inventory_and_Sale_Items_20250317.csv' id='Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4'>
+          <object caption='Inventory_and_Sale_Items_20250317.csv' id='Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C'>
             <properties context=''>
               <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Inventory_and_Sale_Items_20250317.csv' table='[Inventory_and_Sale_Items_20250317#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
@@ -684,12 +679,12 @@
               </relation>
             </properties>
             <properties context='extract'>
-              <relation name='Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4' table='[Extract].[Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4]' type='table' />
+              <relation name='Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C' table='[Extract].[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]' type='table' />
             </properties>
           </object>
-          <object caption='Warehouse_and_Retail_Sales.csv' id='Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165'>
+          <object caption='Warehouse_and_Retail_Sales2.csv' id='Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166'>
             <properties context=''>
-              <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Warehouse_and_Retail_Sales.csv' table='[Warehouse_and_Retail_Sales#csv]' type='table'>
+              <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Warehouse_and_Retail_Sales2.csv' table='[Warehouse_and_Retail_Sales2#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
                   <column datatype='integer' name='YEAR' ordinal='0' />
                   <column datatype='integer' name='MONTH' ordinal='1' />
@@ -704,7 +699,7 @@
               </relation>
             </properties>
             <properties context='extract'>
-              <relation name='Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165' table='[Extract].[Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165]' type='table' />
+              <relation name='Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166' table='[Extract].[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]' type='table' />
             </properties>
           </object>
         </objects>
@@ -714,8 +709,8 @@
               <expression op='[ITEM CODE]' />
               <expression op='[Code]' />
             </expression>
-            <first-end-point object-id='Warehouse_and_Retail_Sales.csv_472CC9D087C447C1843B85F20EEBD165' />
-            <second-end-point object-id='Inventory_and_Sale_Items_20250317.csv_A2042B64CC7E433B8CFE409E60C5CED4' />
+            <first-end-point object-id='Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166' />
+            <second-end-point object-id='Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C' />
           </relationship>
         </relationships>
       </object-graph>
@@ -755,6 +750,14 @@
       <command command='tsc:brush'>
         <param name='field-captions' value='Item Type' />
         <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Highlight 3 (generated)' name='[Action3_7B1F31AA3DB64AAC98C0A6E4109151A4]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Top 10 Suppliers' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Item Type' />
+        <param name='target' value='Top 10 Suppliers' />
       </command>
     </action>
   </actions>
@@ -1392,7 +1395,7 @@
             <column caption='Cases of Product Sold' datatype='real' name='[Calculation_2602236217902534657]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='CASE [Parameters].[Parameter 3]&#10;    WHEN &apos;Retail&apos; THEN SUM([RETAIL SALES])&#10;    WHEN &apos;Warehouse&apos; THEN SUM([WAREHOUSE SALES])&#10;    WHEN &apos;All Channels&apos; THEN SUM([Calculation_2061663523647856641])&#10;END' />
             </column>
-            <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Category1' datatype='string' name='[Category]' role='dimension' type='nominal' />
             <column caption='Item Type' datatype='string' name='[ITEM TYPE]' role='dimension' type='nominal' />
             <column caption='Retail Sales' datatype='real' name='[RETAIL SALES]' role='measure' type='quantitative' />
             <column caption='Warehouse Sales' datatype='real' name='[WAREHOUSE SALES]' role='measure' type='quantitative' />

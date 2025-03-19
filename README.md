@@ -1,7 +1,6 @@
 ## Montgomery County Liquor Sales Analysis
 
-This project analyzes the Warehouse and Retail Sales dataset from Montgomery County, MD linked 
-<a href="https://data.montgomerycountymd.gov/Community-Recreation/Warehouse-and-Retail-Sales/v76h-r7br/about_data" target="_blank">here</a>.
+This project uses excel and Tableau to analyze the Warehouse and Retail Sales dataset from Montgomery County's Alcohol Beverage Services linked <a href="https://data.montgomerycountymd.gov/Community-Recreation/Warehouse-and-Retail-Sales/v76h-r7br/about_data" target="_blank">here</a>.
 
 Some context from wikipedia:
 
@@ -10,8 +9,9 @@ Some context from wikipedia:
 more info <a href="https://en.wikipedia.org/wiki/Montgomery_County_Alcohol_Beverage_Services" target="_blank">here</a>.
 
 ### Dataset Terms and Definitions (from various sources)
-- <u>Retail Sales</u>: Cases of product sold from DLC dispensaries
-- <u>Retial Transfers</u>: Cases of product transferred to DLC dispensaries
+- <u>ABS</u>: Alcohol Beverage Services, previously called the Department of Liquor Control (DLC)
+- <u>Retail Sales</u>: Cases of product sold from ABS dispensaries
+- <u>Retial Transfers</u>: Cases of product transferred to ABS dispensaries
 - <u>Warehouse Sales</u>: Cases of product sold to MC licensees
 - <u>Beer/Wine Credit</u>: Credit or refund for returned, damaged, or unsellable products.
 - <u>NR</u>: Stands for Non-Returnable and typically refers to non-returnable bottles or packaging.
@@ -21,3 +21,8 @@ more info <a href="https://en.wikipedia.org/wiki/Montgomery_County_Alcohol_Bever
 ### Data Cleaning with Excel
 1. Replace blank values in Supplier column by filtering for blank cells and replacing them with 'NULL'
 2. Replaced blank item type cell for item description FONTANAFREDDA BAROLO SILVER LABEL 750 ML with 'WINE'
+
+### View Dashboard
+<a href="https://public.tableau.com/app/profile/jennifer.le2881/viz/sales_17423555670390/SalesDashboard" target="_blank">Dashboard</a>
+
+View in full screen to prevent text from being cut off.

@@ -1,0 +1,1797 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+    <ZoneFriendlyName />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Channel' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Warehouse&quot;'>
+        <calculation class='tableau' formula='&quot;Warehouse&quot;' />
+        <members>
+          <member value='&quot;Retail&quot;' />
+          <member value='&quot;Warehouse&quot;' />
+          <member value='&quot;All Channels&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='dataset' inline='true' name='federated.09yks7405ahzas14mvzmw1mabhuj' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='warehouse_and_retail_sales' name='textscan.05gdfb61d65rqd0zqi0of18jq3nm'>
+            <connection class='textscan' directory='/Users/jenniferle/Downloads/Github/Warehouse' filename='Warehouse_and_Retail_Sales2.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Warehouse_and_Retail_Sales2.csv' table='[Warehouse_and_Retail_Sales2#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='YEAR' ordinal='0' />
+              <column datatype='integer' name='MONTH' ordinal='1' />
+              <column datatype='string' name='SUPPLIER' ordinal='2' />
+              <column datatype='integer' name='ITEM CODE' ordinal='3' />
+              <column datatype='string' name='ITEM TYPE' ordinal='4' />
+              <column datatype='string' name='ITEM DESCRIPTION' ordinal='5' />
+              <column datatype='real' name='RETAIL SALES' ordinal='6' />
+              <column datatype='real' name='RETAIL TRANSFERS' ordinal='7' />
+              <column datatype='real' name='WAREHOUSE SALES' ordinal='8' />
+            </columns>
+          </relation>
+          <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Inventory_and_Sale_Items_20250317.csv' table='[Inventory_and_Sale_Items_20250317#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='Code' ordinal='0' />
+              <column datatype='string' name='Category' ordinal='1' />
+              <column datatype='string' name='Description' ordinal='2' />
+              <column datatype='string' name='Size' ordinal='3' />
+              <column datatype='integer' name='Total Inventory' ordinal='4' />
+              <column datatype='real' name='Price' ordinal='5' />
+              <column datatype='string' name='Sale Price' ordinal='6' />
+              <column datatype='string' name='Sale End Date' ordinal='7' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MONTH</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MONTH]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>MONTH</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SUPPLIER</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SUPPLIER]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>SUPPLIER</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ITEM CODE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ITEM CODE]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>ITEM CODE</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ITEM TYPE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ITEM TYPE]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>ITEM TYPE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ITEM DESCRIPTION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ITEM DESCRIPTION]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>ITEM DESCRIPTION</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RETAIL SALES</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RETAIL SALES]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>RETAIL SALES</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RETAIL TRANSFERS</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RETAIL TRANSFERS]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>RETAIL TRANSFERS</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WAREHOUSE SALES</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WAREHOUSE SALES]</local-name>
+            <parent-name>[Warehouse_and_Retail_Sales2.csv]</parent-name>
+            <remote-alias>WAREHOUSE SALES</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Code]</local-name>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias>Code</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Category]</local-name>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias>Category</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Description]</local-name>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias>Description</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Size</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Size]</local-name>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias>Size</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Inventory</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Total Inventory]</local-name>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias>Total Inventory</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Price]</local-name>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias>Price</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sale Price</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sale Price]</local-name>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias>Sale Price</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sale End Date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sale End Date]</local-name>
+            <parent-name>[Inventory_and_Sale_Items_20250317.csv]</parent-name>
+            <remote-alias>Sale End Date</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Date' datatype='date' name='[Calculation_2061663523637792768]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='MAKEDATE([YEAR],[MONTH],1)' />
+      </column>
+      <column caption='Total Sales by Cases Sold' datatype='real' name='[Calculation_2061663523647856641]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[RETAIL SALES] + [WAREHOUSE SALES]' />
+      </column>
+      <column caption='Cases of Product Sold' datatype='real' name='[Calculation_2602236217902534657]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 3]&#10;    WHEN &apos;Retail&apos; THEN SUM([RETAIL SALES])&#10;    WHEN &apos;Warehouse&apos; THEN SUM([WAREHOUSE SALES])&#10;    WHEN &apos;All Channels&apos; THEN SUM([Calculation_2061663523647856641])&#10;END' />
+      </column>
+      <column caption='Suppliers Count' datatype='integer' name='[Calculation_3313171636043890688]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([SUPPLIER])' />
+      </column>
+      <column caption='Items Count' datatype='integer' name='[Calculation_3313171636045213697]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([ITEM CODE])' />
+      </column>
+      <column caption='Category1' datatype='string' name='[Category]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Code]' role='dimension' type='ordinal' />
+      <column caption='Item Code' datatype='integer' name='[ITEM CODE]' role='dimension' type='ordinal' />
+      <column caption='Item Description' datatype='string' name='[ITEM DESCRIPTION]' role='dimension' type='nominal' />
+      <column caption='Item Type' datatype='string' name='[ITEM TYPE]' role='dimension' type='nominal' />
+      <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+      <column caption='Retail Sales' datatype='real' name='[RETAIL SALES]' role='measure' type='quantitative' />
+      <column caption='Retail Transfers' datatype='real' name='[RETAIL TRANSFERS]' role='measure' type='quantitative' />
+      <column caption='Supplier' datatype='string' name='[SUPPLIER]' role='dimension' type='nominal' />
+      <column caption='Warehouse Sales' datatype='real' name='[WAREHOUSE SALES]' role='measure' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+      <column caption='Inventory_and_Sale_Items_20250317.csv' datatype='table' name='[__tableau_internal_object_id__].[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]' role='measure' type='quantitative' />
+      <column caption='Warehouse_and_Retail_Sales2.csv' datatype='table' name='[__tableau_internal_object_id__].[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]' role='measure' type='quantitative' />
+      <column-instance column='[ITEM TYPE]' derivation='None' name='[none:ITEM TYPE:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Item Type,Supplier)' hidden='true' name='[Action (Item Type,Supplier)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[ITEM TYPE]' />
+          <groupfilter function='level-members' level='[SUPPLIER]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/md/x0jg8pwj2r112lsfdc9_340c0000gs/T/tableau-temp/#TableauTemp_16v6uxz1dd6lqo1d0c0pj1hbta2j.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/19/2025 03:06:23 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166' table='[Extract].[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]' type='table' />
+            <relation name='Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C' table='[Extract].[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]' type='table' />
+          </relation>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>YEAR</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[YEAR]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>YEAR</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MONTH</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MONTH]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>MONTH</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SUPPLIER</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SUPPLIER]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>SUPPLIER</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>921</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ITEM CODE</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ITEM CODE]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>ITEM CODE</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>67762</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ITEM TYPE</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ITEM TYPE]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>ITEM TYPE</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ITEM DESCRIPTION</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ITEM DESCRIPTION]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>ITEM DESCRIPTION</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>67762</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RETAIL SALES</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RETAIL SALES]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>RETAIL SALES</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8942</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RETAIL TRANSFERS</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[RETAIL TRANSFERS]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>RETAIL TRANSFERS</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1079</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WAREHOUSE SALES</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[WAREHOUSE SALES]</local-name>
+              <parent-name>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</parent-name>
+              <remote-alias>WAREHOUSE SALES</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Warehouse_and_Retail_Sales2.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1951</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Code]</local-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
+              <remote-alias>Code</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Inventory_and_Sale_Items_20250317.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6515</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Category]</local-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
+              <remote-alias>Category</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Inventory_and_Sale_Items_20250317.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>105</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Description]</local-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
+              <remote-alias>Description</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Inventory_and_Sale_Items_20250317.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6515</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Size</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Size]</local-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
+              <remote-alias>Size</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Inventory_and_Sale_Items_20250317.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>39</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Total Inventory</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Total Inventory]</local-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
+              <remote-alias>Total Inventory</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Inventory_and_Sale_Items_20250317.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>375</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Price]</local-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
+              <remote-alias>Price</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Inventory_and_Sale_Items_20250317.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>286</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sale Price</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Sale Price]</local-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
+              <remote-alias>Sale Price</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Inventory_and_Sale_Items_20250317.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>78</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sale End Date</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Sale End Date]</local-name>
+              <parent-name>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</parent-name>
+              <remote-alias>Sale End Date</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Inventory_and_Sale_Items_20250317.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:ITEM TYPE:nk]' palette='blue_10_0' type='palette'>
+            <map to='#2a5783'>
+              <bucket>&quot;Wine&quot;</bucket>
+            </map>
+            <map to='#42709e'>
+              <bucket>&quot;Non-Alcohol&quot;</bucket>
+            </map>
+            <map to='#598ab6'>
+              <bucket>&quot;Liquor&quot;</bucket>
+            </map>
+            <map to='#75a6cc'>
+              <bucket>&quot;Kegs&quot;</bucket>
+            </map>
+            <map to='#94c2e1'>
+              <bucket>&quot;Dunnage&quot;</bucket>
+            </map>
+            <map to='#b9ddf1'>
+              <bucket>&quot;Beer&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Channel' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Warehouse&quot;'>
+          <calculation class='tableau' formula='&quot;Warehouse&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='Inventory_and_Sale_Items_20250317.csv' id='Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C'>
+            <properties context=''>
+              <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Inventory_and_Sale_Items_20250317.csv' table='[Inventory_and_Sale_Items_20250317#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='Code' ordinal='0' />
+                  <column datatype='string' name='Category' ordinal='1' />
+                  <column datatype='string' name='Description' ordinal='2' />
+                  <column datatype='string' name='Size' ordinal='3' />
+                  <column datatype='integer' name='Total Inventory' ordinal='4' />
+                  <column datatype='real' name='Price' ordinal='5' />
+                  <column datatype='string' name='Sale Price' ordinal='6' />
+                  <column datatype='string' name='Sale End Date' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C' table='[Extract].[Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C]' type='table' />
+            </properties>
+          </object>
+          <object caption='Warehouse_and_Retail_Sales2.csv' id='Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166'>
+            <properties context=''>
+              <relation connection='textscan.05gdfb61d65rqd0zqi0of18jq3nm' name='Warehouse_and_Retail_Sales2.csv' table='[Warehouse_and_Retail_Sales2#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='YEAR' ordinal='0' />
+                  <column datatype='integer' name='MONTH' ordinal='1' />
+                  <column datatype='string' name='SUPPLIER' ordinal='2' />
+                  <column datatype='integer' name='ITEM CODE' ordinal='3' />
+                  <column datatype='string' name='ITEM TYPE' ordinal='4' />
+                  <column datatype='string' name='ITEM DESCRIPTION' ordinal='5' />
+                  <column datatype='real' name='RETAIL SALES' ordinal='6' />
+                  <column datatype='real' name='RETAIL TRANSFERS' ordinal='7' />
+                  <column datatype='real' name='WAREHOUSE SALES' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166' table='[Extract].[Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[ITEM CODE]' />
+              <expression op='[Code]' />
+            </expression>
+            <first-end-point object-id='Warehouse_and_Retail_Sales2.csv_94C6E34F5A2642D29CAA18A426EBA166' />
+            <second-end-point object-id='Inventory_and_Sale_Items_20250317.csv_54B28DCC77F74444980E8908786CD81C' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.09yks7405ahzas14mvzmw1mabhuj'>
+      <datasources>
+        <datasource caption='dataset' name='federated.09yks7405ahzas14mvzmw1mabhuj' />
+      </datasources>
+      <datasource-dependencies datasource='federated.09yks7405ahzas14mvzmw1mabhuj'>
+        <column caption='Item Type' datatype='string' name='[ITEM TYPE]' role='dimension' type='nominal' />
+        <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+        <column-instance column='[ITEM TYPE]' derivation='None' name='[none:ITEM TYPE:nk]' pivot='key' type='nominal' />
+        <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]'>
+        <groupfilter function='level-members' level='[none:ITEM TYPE:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:YEAR:ok]'>
+        <groupfilter function='level-members' level='[none:YEAR:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1_33DBD643DF3A41B786B918155B8250DC]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Top 5 Categories' />
+      <command command='tsc:brush'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Top 5 Categories' />
+      </command>
+    </action>
+    <action caption='Highlight 2 (generated)' name='[Action2_59F2665FA64444F097DB2E75828DA8BE]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Sales Dashboard' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Item Type' />
+        <param name='target' value='Sales Dashboard' />
+      </command>
+    </action>
+    <action caption='Highlight 3 (generated)' name='[Action3_7B1F31AA3DB64AAC98C0A6E4109151A4]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Top 10 Suppliers' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Item Type' />
+        <param name='target' value='Top 10 Suppliers' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Monthly Sales'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Monthly Sales- &lt;</run>
+            <run>[Parameters].[Parameter 3]</run>
+            <run>&gt;&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset' name='federated.09yks7405ahzas14mvzmw1mabhuj' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Channel' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Warehouse&quot;'>
+              <calculation class='tableau' formula='&quot;Warehouse&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.09yks7405ahzas14mvzmw1mabhuj'>
+            <column caption='Date' datatype='date' name='[Calculation_2061663523637792768]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='MAKEDATE([YEAR],[MONTH],1)' />
+            </column>
+            <column caption='Total Sales by Cases Sold' datatype='real' name='[Calculation_2061663523647856641]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[RETAIL SALES] + [WAREHOUSE SALES]' />
+            </column>
+            <column caption='Cases of Product Sold' datatype='real' name='[Calculation_2602236217902534657]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 3]&#10;    WHEN &apos;Retail&apos; THEN SUM([RETAIL SALES])&#10;    WHEN &apos;Warehouse&apos; THEN SUM([WAREHOUSE SALES])&#10;    WHEN &apos;All Channels&apos; THEN SUM([Calculation_2061663523647856641])&#10;END' />
+            </column>
+            <column caption='Item Type' datatype='string' name='[ITEM TYPE]' role='dimension' type='nominal' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='Retail Sales' datatype='real' name='[RETAIL SALES]' role='measure' type='quantitative' />
+            <column caption='Warehouse Sales' datatype='real' name='[WAREHOUSE SALES]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+            <column-instance column='[ITEM TYPE]' derivation='None' name='[none:ITEM TYPE:nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[RETAIL SALES]' derivation='Sum' name='[sum:RETAIL SALES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[WAREHOUSE SALES]' derivation='Sum' name='[sum:WAREHOUSE SALES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2061663523637792768]' derivation='Month-Trunc' name='[tmn:Calculation_2061663523637792768:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2602236217902534657]' derivation='User' name='[usr:Calculation_2602236217902534657:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:YEAR:ok]</column>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' scope='rows' value='Cases of Product Sold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.09yks7405ahzas14mvzmw1mabhuj].[sum:RETAIL SALES:qk]' />
+              <lod column='[federated.09yks7405ahzas14mvzmw1mabhuj].[sum:WAREHOUSE SALES:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]</rows>
+        <cols>[federated.09yks7405ahzas14mvzmw1mabhuj].[tmn:Calculation_2061663523637792768:qk]</cols>
+      </table>
+      <simple-id uuid='{572C2E92-1C1D-46EC-B152-752C24F19EF0}' />
+    </worksheet>
+    <worksheet name='Top 10 Items'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt;&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset' name='federated.09yks7405ahzas14mvzmw1mabhuj' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Channel' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Warehouse&quot;'>
+              <calculation class='tableau' formula='&quot;Warehouse&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.09yks7405ahzas14mvzmw1mabhuj'>
+            <column caption='Total Sales by Cases Sold' datatype='real' name='[Calculation_2061663523647856641]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[RETAIL SALES] + [WAREHOUSE SALES]' />
+            </column>
+            <column caption='Cases of Product Sold' datatype='real' name='[Calculation_2602236217902534657]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 3]&#10;    WHEN &apos;Retail&apos; THEN SUM([RETAIL SALES])&#10;    WHEN &apos;Warehouse&apos; THEN SUM([WAREHOUSE SALES])&#10;    WHEN &apos;All Channels&apos; THEN SUM([Calculation_2061663523647856641])&#10;END' />
+            </column>
+            <column caption='Item Description' datatype='string' name='[ITEM DESCRIPTION]' role='dimension' type='nominal' />
+            <column caption='Item Type' datatype='string' name='[ITEM TYPE]' role='dimension' type='nominal' />
+            <column caption='Retail Sales' datatype='real' name='[RETAIL SALES]' role='measure' type='quantitative' />
+            <column caption='Warehouse Sales' datatype='real' name='[WAREHOUSE SALES]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+            <column-instance column='[ITEM DESCRIPTION]' derivation='None' name='[none:ITEM DESCRIPTION:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ITEM TYPE]' derivation='None' name='[none:ITEM TYPE:nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2602236217902534657]' derivation='User' name='[usr:Calculation_2602236217902534657:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM DESCRIPTION:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='[Calculation_2602236217902534657]' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:ITEM DESCRIPTION:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM DESCRIPTION:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]</column>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM DESCRIPTION:nk]</column>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:YEAR:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM DESCRIPTION:nk]' value='212' />
+            <format attr='background-color' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' value='#ffffff' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM DESCRIPTION:nk]</rows>
+        <cols>[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]</cols>
+      </table>
+      <simple-id uuid='{C50817D7-344F-4232-8B7C-8507418114E3}' />
+    </worksheet>
+    <worksheet name='Top 10 Suppliers'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt; &#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset' name='federated.09yks7405ahzas14mvzmw1mabhuj' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Channel' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Warehouse&quot;'>
+              <calculation class='tableau' formula='&quot;Warehouse&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.09yks7405ahzas14mvzmw1mabhuj'>
+            <column caption='Total Sales by Cases Sold' datatype='real' name='[Calculation_2061663523647856641]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[RETAIL SALES] + [WAREHOUSE SALES]' />
+            </column>
+            <column caption='Cases of Product Sold' datatype='real' name='[Calculation_2602236217902534657]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 3]&#10;    WHEN &apos;Retail&apos; THEN SUM([RETAIL SALES])&#10;    WHEN &apos;Warehouse&apos; THEN SUM([WAREHOUSE SALES])&#10;    WHEN &apos;All Channels&apos; THEN SUM([Calculation_2061663523647856641])&#10;END' />
+            </column>
+            <column caption='Item Type' datatype='string' name='[ITEM TYPE]' role='dimension' type='nominal' />
+            <column caption='Retail Sales' datatype='real' name='[RETAIL SALES]' role='measure' type='quantitative' />
+            <column caption='Supplier' datatype='string' name='[SUPPLIER]' role='dimension' type='nominal' />
+            <column caption='Warehouse Sales' datatype='real' name='[WAREHOUSE SALES]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+            <column-instance column='[ITEM TYPE]' derivation='None' name='[none:ITEM TYPE:nk]' pivot='key' type='nominal' />
+            <column-instance column='[SUPPLIER]' derivation='None' name='[none:SUPPLIER:nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2602236217902534657]' derivation='User' name='[usr:Calculation_2602236217902534657:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:SUPPLIER:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='[Calculation_2602236217902534657]' function='order' user:ui-marker='order'>
+                <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;8 VINI INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;A HARDY USA LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;A I G WINE &amp; SPIRITS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;A VINTNERS SELECTIONS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;A&amp;E INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;A&amp;W BORDERS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ADAMBA IMPORTS INTL&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AIKO IMPORTERS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ALLAGASH BREWING COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ALLIED IMPORTERS USA LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ALTITUDE SPIRITS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AMERICAN BEVERAGE CORPORATION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AMERICAN BEVERAGE MARKETERS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AMERICAN FIDELITY TRADING&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AMERICAN VINTAGE BEVERAGE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ANHEUSER BUSCH INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ARCHER ROOSE LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AREL GROUP WINE &amp; SPIRITS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ARIS A ZISSIS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ARTISANS &amp; VINES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ASAHI BEER USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ATLANTIC WINE &amp; SPIRITS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ATLAS BREW WORKS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AW DIRECT LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AZABU DISTILLING CO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;AZIZ SHAFI TANNIC TONGUE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BACARDI USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BACCHUS IMPORTERS LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BACKUP BEVERAGE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BANFI PRODUCTS CORP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BANVILLE &amp; JONES WINE MERCHANTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BARON FRANCOIS LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BARREL ONE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BASIGNANI WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BASQUE BAR LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BBL INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BINDING BRAUEREI USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BITTERMILK LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BLACK ANKLE VINEYARDS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BOLD ROCK PARTNERS LP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BOND DISTRIBUTING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BOORDY VINEYARDS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BORVIN BEVERAGE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BOSTON BEER CORPORATION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BOUTIQUE VINEYARDS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BREWDOG BREWING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BRONCO WINE COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BROOKEVILLE BREWING LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BROWN-FORMAN BEVERAGES WORLDWIDE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BUCK DISTRIBUTING COMPANY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;BULLSHINE DISTILLERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;C MONDAVI &amp; SONS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CABERNET CORPORATION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CALVERT BREWING COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CAMPARI AMERICA LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CANTINIERE IMPORTS &amp; DISTRIBUTING INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CAPE STARZ WINE LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CARROLL CREEK WHISKEY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CASA CHIRICO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CASTLE BRANDS USA CORP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CELICAR LLC DBA TWIN VALLEY DISTILLERS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CHADDSFORD WINERY LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CHARLES JACQUIN ET CIE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CHARM CITY BEVERAGE LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CHASSEUR WINE LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CHATEAU DIANA LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CHEERS DISTRIBUTING INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CHEF SOUS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CHEVAL QUANCARD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CITIZENS BREWING LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CLASSIC WINE IMPORTS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CLASSIC WINE IMPORTS INC DBA VISION WINE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CLIPPER CITY BREWING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;COASTAL BREWING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;COMETE WINES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CONSTANTINE WINES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CONSTELLATION BRANDS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;COPPER CANE LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CRAFT BREW ALLIANCE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CRAFT WINE &amp; SPIRITS OF MARYLAND LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CROOK &amp; MARKER LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;CROWN IMPORTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;D&apos;AQUINO ITALIAN IMPORTING CO INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DANGEROUS WINE GROUP LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DC BRAU BREWING LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DCD ENTERPRISES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;Default&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DELICATO FAMILY VINEYARDS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DELMAR BREWING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DESCHUTES BREWERY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DEUTSCH FAMILY WINE &amp; SPIRITS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DIAGEO NORTH AMERICA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DIONYSOS IMPORTS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DISARONNO INTERNATIONAL LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DISTRICT CIDER COMPANY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DMV DISTRIBUTING LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DOGFISH HEAD CRAFT BREWERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DOGFISH HEAD CRAFT BREWERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DOGFISH HEAD DISTILLERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DOMAINE SELECT WINE &amp; SPIRITS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DON SEBASTIANI &amp; SONS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DOPS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DRAGON DISTILLERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DREYFUS ASHBY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DUCKHORN WINE COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DUCLAW BREWERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DUGGANS DISTILLERS PROD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;DUVEL MOORTGAT USA LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;E &amp; J GALLO WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;E M D SALES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;EASTERN LIQUOR DISTRIBUTORS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ELITE WINES IMPORTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ELK RUN VINEYARDS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;EVEREST SPIRITS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;EXCELSIOR WINE COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FAR NIENTE WINERY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FAROPIAN SPIRITS LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FERRARI CARANO WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FETZER VINEYARDS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FIFTH GENERATION INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FILIBUSTER BARRELS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FIOR DI SOLE LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FIORE WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FIVE GRAPES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FLAVOR SEEKERS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FLYING DOG BREWERY LLLP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FN CELLARS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FOLEY FAMILY WINES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FOWLES WINE USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FRANCIS COPPOLA WINERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FRANK LIN MD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FREDERICK P WINNER LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FREDERICK WILDMAN &amp; SONS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FREE RUN WINE MERCHANTS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FREELANCE WINES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FREIXENET MIONETTO USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FREIXENET USA&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FRITZ IMPORTS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FRONT PORCH MICRO WINERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FRUIT OF THE VINES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;FX MATT BREWING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;G GAUTHIER CELLARS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GAMBRINUS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GATOR RON&apos;S LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GEORGIAN HOUSE OF GREATER WASHINGTON&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GF WINES, LLC DBA GARY FARRELL WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GJS SALES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GLOBAL OCEAN AND AIR CARGO SERVICES&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GOOSE RIDGE LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GRAIL POINT BREWERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GRAND ENCLOS DU CHATEAU DE CERONS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GRAPES &amp; BARLEY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GRAPES OF SPAIN INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;GROTH VINEYARDS &amp; WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HAMCO DC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HARVEST IMPORTING LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HEAVEN HILL DISTILLERIES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HEIMBUCH ESTATE VINEYARDS AND WINERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HEINEKEN USA&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HOME BREW MART INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HONIG VINEYARD AND WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HOTALING &amp; CO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HOUTON PURVEYORS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;HUB WINE CORPORATION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;IMPERO WINE DISTRIBUTORS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;IMPERO WINE DISTRIBUTORS VIRGINIA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;INFINIUM SPIRITS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;INTERBALT PRODUCTS CORP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;INTERNATIONAL CELLARS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;INTERNATIONAL SPIRITS &amp; WINES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;J LOHR WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;JACK POUST &amp; COMPANY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;JACKSON FAMILY ENTERPRISES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;JIM BEAM BRANDS CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;JOHN GIVEN WINES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;JORDAN VINEYARD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;JOS VICTORI WINES&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;KAHN PAPER COMPANY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;KATCEF BROTHERS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;KING ESTATE WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;KLEIN FAMILY VINTNERS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;KOBRAND CORPORATION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;KYSELA PERE ET FILS LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LA ISLA CORPORATION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LABATT USA OPERATING CO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LAIRD AND COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LANTERNA DISTRIBUTORS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LAPHAM SALES &amp; MARKETING DBA LAPHAM&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LATITUDE BEVERAGE COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LCF WINE COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LEGACY PARTNERS DISTRIBUTION LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LEGENDS LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LINNE CALODO INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LION NATHAN USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LOOK VODKA LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LUNEAU USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LUXCO SPIRITED BRANDS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;LYON DISTILLING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MACCHU PISCO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MACK &amp; SCHUHLE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MADIDUS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MAISON JOMERE LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MARK ANTHONY BRANDS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MARKERS EDGE LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MARQUEE SELECTIONS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MASS BAY BREWING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MAST-JAEGERMEISTER US INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MCNEILL INDEPENDENT SPIRIT CREATORS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MEIOMI&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MERRYVALE VINEYARDS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MESOZOIC TECHNOLOGIES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MEXCOR INTERNATIONAL&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MHW LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MICHAEL R DOWNEY SELECTIONS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MILLER BREWING COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MOET HENNESSY USA&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MONDO VINO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MONOCACY BREWING CO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MONSIEUR TOUTON SELECTION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MONTEBELLO BRANDS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;MOUNT DEFIANCE CIDERY &amp; DISTILLERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NARRAGANSETT BREWING COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NEGUS BREWING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NEW BELGIUM BREWING INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NEW PARROTT &amp; CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NEXTERRA WINE COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NICE LEGS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NICHE IMPORTERS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NICKOLAS IMPORTS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NIEBAUM COPPOLA ESTATE WINERY LP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NOBLE VINTNERS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NORTH LOCK LLC DBA PORT CITY BREWING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;NOVELTY MD INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;O&apos;NEILL BEVERAGES CO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;OCEAN CITY BREWING CO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;OENOS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;OHMRONE WINE AND LIQUOR LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ONE EIGHT DISTILLING LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ONE TRUE VINE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;OPICI FAMILY DISTRIBUTING OF MD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;OREGON BREWING COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ORGANIC VINTNERS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;OSLO ENTERPRISE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PABST BREWING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PACIFIC RIM WINEMAKERS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PALM BAY IMPORTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PAMPA BEVERAGES LLC DBA TRANSNATIONAL SU&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PARAGON VINEYARD CO INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PARALLEL WORLD BREWING COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PARK STREET IMPORTS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PATERNO IMPORTS LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PERNOD RICARD USA LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PHILLIPS FARMS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PIPE CREEK WINES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PLATA WINE PARTNERS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PLUME RIDGE IRREVOCABLE TRUST&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;POTOMAC SELECTIONS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PRECEPT BRANDS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PREMIUM DISTRIBUTORS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PREMIUM DISTRIBUTORS OF MARYLAND&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PRESTIGE BEVERAGE GROUP OF MD LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PRESTIGE WINE IMPORTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PROXIMO SPIRITS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PUNTO VINO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;PWSWN INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;QUINTESSENTIAL LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RAPP CAPITAL LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RED INK IMPORTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RED MOUNTAIN DISTILLING &amp; SPIRITS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RED MOUNTAIN DISTILLING AND SPIRITS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;REGAL WINE IMPORTS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RELIABLE CHURCHILL LLLP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;REMY COINTREAU USA&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;REPUBLIC NATIONAL DISTRIBUTING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;REPUBLIC RESTORATIVES&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RIGHT FORWARD LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ROBERT GIRAUD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ROBERT KACHER SELECTIONS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ROBERT OATLEY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ROBERT OATLEY VINEYARDS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ROOTS RUN DEEP LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ROYAL WINE CORP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RSL HOLDINGS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RUSSIAN STANDARD VODKA (USA) INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RUTHERFORD WINE COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;RVWC LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SABLE RIDGE VINEYARD LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SAGAMORE WHISKEY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SALVETO IMPORTS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SAN ANTONIO WINERY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SANGLIER SELECTIONS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SANTA MARGHERITA USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SAWM IMPORTS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SAZERAC CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SCHEID VINEYARDS CALIFORNIA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SCHMITT SOHNE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SCHUG CARNEROS ESTATE WINERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SCOPERTA IMPORTING COMPANY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SERRALLES USA LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SIDNEY-FRANK IMPORTING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SIERRA NEVADA BREWING CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SIMON N CELLARS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SINGHA NORTH AMERICA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SLIGO MILL BREWING LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SMITH-ANDERSON ENTERPRISES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SMT AQUISITIONS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SNR HOLDINGS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SOKOL BLOSSER LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SOUTHERN GLAZERS WINE AND SPIRITS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SOUTHERN WINE &amp; SPIRITS OF MARYLAND&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SOVEREIGN BRANDS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SPADA ENTERPRISES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SPAINS BEST BEERS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SPLINTER GROUP NAPA LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ST GEORGE SPIRITS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ST KILLIAN IMPORTING CO INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ST RICE WINE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ST SUPERY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;STARR HILL BREWERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;STE MICHELLE WINE ESTATES&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;STEFANO INCORPORATED&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;STELLAR IMPORTING CO LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;STOLI GROUP (USA) LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SUBARASHII KUDAMONO CO INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SUGARLOAF MOUNTAIN SUNLIGHT VINEYARD LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SUGARLOAF MOUNTAIN VINEYARD LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SURVILLE ENTERPRISES CORP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SUTTER HOME WINERY INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;SWEETWATER BREWING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TAP26MD LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TAPWINES&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TENTH HARVEST LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TERRAPIN BEER COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TESTA WINES OF THE WORLD LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE BROOKLYN BREWERY CORPORATION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE COUNTRY VINTNER, LLC DBA WINEBOW&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE DOG BEVERAGE CO INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE EDRINGTON GROUP USA LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE HESS COLLECTION&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE RIVER WINE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE SANDY BOTTOM ENTERPRISES LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE SPANISH WINE IMPORTERS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE TRITON COLLECTION INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE VINERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE WINE GROUP&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THE WINE SOURCE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THREE HENS LLC T/A TENTH HARVEST&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;THREE STARS BREWING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TI BEVERAGE GROUP LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TOBACCO BARN DISTILLERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TRADEWINDS SPECIALTY IMPORTS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TREANA WINERY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TREASURY WINE ESTATES AMERICAS COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TREFETHEN VINEYARDS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TRI-VIN IMPORTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TRICANA SHIPPERS &amp; IMPORT&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TROEGS BREWING COMPANY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;TRUE RESPITE BREWING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;UNITED STATES BEVERAGE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;UNITED STATES DISTILLED PRODUCTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;URUGUAY IMPORTS LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;USA WINE IMPORTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;USA WINE WEST LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VERMONT HARD CIDER COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VICTORY BREWING COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VIGNOBLES LVDH USA INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VIN DIVINO LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VINIFERA DISTRIBUTING OF MARYLAND INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VINTAGE POINT LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VINTAGE VIRGINIA APPLES&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VINTAGE WINE ESTATES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VINTAGE WINES INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VINTURE WINE COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VINTUS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;VOLUBILIS IMPORTS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WAGNER WINE COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WARSTEINER IMPORTERS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WASHBURN WINE CO&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WEIN-BAUER INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WELL OILED WINE COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WESTERN SPIRITS BEVERAGE COMPANY LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WETTEN IMPORTERS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WHITE ROCK DISTILLERS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WI INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WILLIAM GRANT AND SONS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WILLIAM HARRISON IMPORTS&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WILLIAMS CORNER WINE&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WILSON DANIELS LTD&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WINE BRIDGE IMPORTS INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WINEBOW INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WINERY EXCHANGE INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;WITH MALUS AFORETHOUGHT LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;YOUNG WON TRADING INC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;YUENGLING BREWERY&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;Z WINE GALLERY IMPORTS LLC&quot;' />
+                  <groupfilter function='member' level='[none:SUPPLIER:nk]' member='&quot;ZURENA LLC&quot;' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:SUPPLIER:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:SUPPLIER:nk]</column>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]</column>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:YEAR:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:SUPPLIER:nk]' value='180' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:SUPPLIER:nk]</rows>
+        <cols>[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]</cols>
+      </table>
+      <simple-id uuid='{43AABA8D-A7E2-41CA-9DBD-55174919F363}' />
+    </worksheet>
+    <worksheet name='Top 5 Categories'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='dataset' name='federated.09yks7405ahzas14mvzmw1mabhuj' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Channel' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Warehouse&quot;'>
+              <calculation class='tableau' formula='&quot;Warehouse&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.09yks7405ahzas14mvzmw1mabhuj'>
+            <column caption='Total Sales by Cases Sold' datatype='real' name='[Calculation_2061663523647856641]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[RETAIL SALES] + [WAREHOUSE SALES]' />
+            </column>
+            <column caption='Cases of Product Sold' datatype='real' name='[Calculation_2602236217902534657]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 3]&#10;    WHEN &apos;Retail&apos; THEN SUM([RETAIL SALES])&#10;    WHEN &apos;Warehouse&apos; THEN SUM([WAREHOUSE SALES])&#10;    WHEN &apos;All Channels&apos; THEN SUM([Calculation_2061663523647856641])&#10;END' />
+            </column>
+            <column caption='Category1' datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column caption='Item Type' datatype='string' name='[ITEM TYPE]' role='dimension' type='nominal' />
+            <column caption='Retail Sales' datatype='real' name='[RETAIL SALES]' role='measure' type='quantitative' />
+            <column caption='Warehouse Sales' datatype='real' name='[WAREHOUSE SALES]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+            <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ITEM TYPE]' derivation='None' name='[none:ITEM TYPE:nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_2602236217902534657]' derivation='User' name='[usr:Calculation_2602236217902534657:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]'>
+            <groupfilter count='5' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='[Calculation_2602236217902534657]' function='order' user:ui-marker='order'>
+                <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;1\% MIXERS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;ALSATIAN WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;AMERICAN BLUSH&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;AMERICAN RED&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;AMERICAN TABLE WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;AMERICAN WHITE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;APERITIF&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;ARGENTINA&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;ARMAGNAC&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;ASIAN&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;AUSTRALIAN&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;BLENDED WHISKEY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;BOTTLED IN BOND&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;CANADIAN WHISKEY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;CHAMPAGNE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;CHILE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;CIDERS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;COGNAC&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC BOTTLE BEER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC BRANDY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC CAN BEER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC CORDIALS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC DESSERT WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC GIN&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC LIQUOR SPECIALTY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC NON ALCOHOLIC BEER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC RUM&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC RUM FLAVORS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC SCOTCH&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC VODKA&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;DOMESTIC VODKA FLAVORS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;FLAVORED BRANDY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;FRANCE-OTHER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;FRENCH BLUSH&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;FRENCH RED WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;FRENCH WHITE WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;GERMAN WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;GRAIN ALCOHOL&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;GRAPPA&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;GREEK&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED BOTTLE BEER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED BRANDY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED CAN BEER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED CORDIALS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED DESSERT WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED GIN&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED GIN FLAVORS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED NON ALCOHOLIC BEER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED RUM&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED RUM FLAVORS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED SCOTCH&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED VODKA&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IMPORTED VODKA FLAVORS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;INDIAN WHISKY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;IRISH WHISKEY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;ITALIAN RED WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;ITALIAN ROSE WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;ITALIAN WHITE WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;KOSHER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;LIQ BASED RTD&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;LIQ BASED SELTZER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;LIQUEUR&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;LOIRE VALLEY WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;MALT BASE COOLERS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;MALT BASED RTD&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;MALT BASED SELTZER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;MEAD (WINE)&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;MISCELLANEOUS AGAVE SPIRIT&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;MISCELLANEOUS IMPORTED SPIRITS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;MISCELLANEOUS IMPORTED WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;NEW ZEALAND&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;NON-ALCOHOLIC MIXERS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;NON-ALCOHOLIC WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;PORT&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;PRE-MIX COCKTAILS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;RED BORDEAUX WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;RED BURGUNDY WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;RETAIL ACCESSORIES&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;RHONE RED WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;RHONE WHITE WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SAKE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SESSION RTD&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SHERRY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SINGLE MALT IRISH WHISKEY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SINGLE MALT SCOTCH&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SOUR MASH WHISKEY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SOUTH AFRICAN&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SOUTH AMERICAN OTHER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SPANISH/PORTUGUESE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;SPARKLING&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;STORE SUPPLIES&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;STRAIGHT BOURBON WHISKEY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;STRAIGHT RYE WHISKEY&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;TEQUILA&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;TEQUILA FLAVORS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;VERMOUTH&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;WHITE BORDEAUX WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;WHITE BURGUNDY WINE&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;WINE BASED RTD&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;WINE BASED SELTZER&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;WINE CANS&quot;' />
+                  <groupfilter function='member' level='[none:Category:nk]' member='&quot;WINE-BASED COOLERS&quot;' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' direction='DESC' using='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' />
+          <slices>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]</column>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:YEAR:ok]</column>
+            <column>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' scope='cols' value='0' />
+            <format attr='border-style' scope='cols' value='none' />
+            <format attr='font-family' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='Tw Cen MT' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='176' />
+            <format attr='total-label' data-class='subtotal' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='' />
+            <format attr='background-color' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='#e9f3f2' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='Tw Cen MT' />
+            <format attr='font-size' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='10' />
+            <format attr='text-orientation' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='0' />
+            <format attr='text-align' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='center' />
+            <format attr='vertical-align' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='auto' />
+            <format attr='wrap' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]' value='auto' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' palette='blue_teal_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' />
+              <text column='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='has-stroke' value='false' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09yks7405ahzas14mvzmw1mabhuj].[none:Category:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{B7C661F6-4F3A-4639-B1C2-86FB5977072A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Sales Dashboard'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+        <datasource caption='dataset' name='federated.09yks7405ahzas14mvzmw1mabhuj' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Channel' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Warehouse&quot;'>
+          <calculation class='tableau' formula='&quot;Warehouse&quot;' />
+          <members>
+            <member value='&quot;Retail&quot;' />
+            <member value='&quot;Warehouse&quot;' />
+            <member value='&quot;All Channels&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <datasource-dependencies datasource='federated.09yks7405ahzas14mvzmw1mabhuj'>
+        <column caption='Item Type' datatype='string' name='[ITEM TYPE]' role='dimension' type='nominal' />
+        <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+        <column-instance column='[ITEM TYPE]' derivation='None' name='[none:ITEM TYPE:nk]' pivot='key' type='nominal' />
+        <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='43713' id='1' name='Monthly Sales' w='49953' x='47708' y='2844' />
+        <zone h='48653' id='4' name='Top 10 Suppliers' w='48924' x='46492' y='48353' />
+        <zone h='23653' id='6' name='Top 10 Suppliers' pane-specification-id='2' param='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]' type-v2='color' w='8419' x='87839' y='67515' />
+        <zone h='51048' id='7' name='Top 10 Items' w='41066' x='3648' y='48503' />
+        <zone h='29790' id='8' name='Top 5 Categories' w='23761' x='19832' y='21257' />
+        <zone friendly-name='Filters' h='25898' id='11' param='vert' type-v2='layout-flow' w='12816' x='2993' y='21407'>
+          <zone fixed-size='50' h='8683' id='3' is-fixed='true' mode='compact' param='[Parameters].[Parameter 3]' type-v2='paramctrl' w='12816' x='2993' y='21407'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='7785' id='9' mode='checkdropdown' name='Top 10 Suppliers' param='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:YEAR:ok]' type-v2='filter' values='database' w='12816' x='2993' y='30090'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='7785' id='10' mode='checkdropdown' name='Top 10 Suppliers' param='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]' type-v2='filter' values='database' w='12816' x='2993' y='37875'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone forceUpdate='true' h='15569' id='12' type-v2='text' w='42283' x='2619' y='3892'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#555555' fontname='Tableau Medium' fontsize='18'><![CDATA[Department of Liquor Control (DLC)  <[Parameters].[Parameter 3]> Sales]]></run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='border-color' value='#555555' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='2' />
+            <format attr='background-color' value='#ddebf0' />
+          </zone-style>
+        </zone>
+        <zone forceUpdate='true' h='4491' id='13' type-v2='text' w='28718' x='65669' y='31437'>
+          <formatted-text>
+            <run fontname='Sana'>Retail Sales- Cases of product sold from DLC dispensaries</run>
+            <run>Æ&#10;</run>
+            <run fontname='Sana'>Warehouse Sales-  Cases of product sold to MC licensees</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='4491' id='14' type-v2='text' w='18803' x='19832' y='46407'>
+          <formatted-text>
+            <run fontsize='8'>*Not all items belong to a category</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <simple-id uuid='{39FEE4DA-4B85-4B91-BC48-D991DD97DE23}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Top 10 Suppliers'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='checkdropdown' param='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:YEAR:ok]' type='filter' />
+            <card pane-specification-id='2' param='[federated.09yks7405ahzas14mvzmw1mabhuj].[none:ITEM TYPE:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 3]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DBE655A9-18E2-4105-9D35-677518D37631}' />
+    </window>
+    <window class='worksheet' name='Top 10 Items'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 3]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5F0D96A5-D2B7-4265-AE9F-E2F8AC201242}' />
+    </window>
+    <window class='worksheet' name='Top 5 Categories'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.09yks7405ahzas14mvzmw1mabhuj].[usr:Calculation_2602236217902534657:qk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 3]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7BA4473A-7D0F-43A1-8DB1-DB4A1266BC77}' />
+    </window>
+    <window class='worksheet' name='Monthly Sales'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 3]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6651AE67-3AE0-456A-BB0D-2FB46263185E}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Sales Dashboard'>
+      <viewpoints>
+        <viewpoint name='Monthly Sales'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Top 10 Items' />
+        <viewpoint name='Top 10 Suppliers' />
+        <viewpoint name='Top 5 Categories' />
+      </viewpoints>
+      <active id='3' />
+      <simple-id uuid='{9261E8AA-1AA2-43EC-BC87-72A8CB457898}' />
+    </window>
+  </windows>
+</workbook>
